@@ -42,7 +42,7 @@ const Home = () => {
     event.preventDefault();
     console.log(event);
     const params = new URLSearchParams();
-    params.append("apikey", "80727d5bf08d5acb7187fa7a3a48a957");
+    params.append("apikey", "");
     if (searchType === "characters" || searchType === "events") {
       params.append("nameStartsWith", searchInput);
     } else {
