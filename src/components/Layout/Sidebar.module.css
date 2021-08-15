@@ -1,18 +1,19 @@
 .sidebar {
   grid-area: sidebar;
-  /* width: 5rem;*/
   height: 100%;
   display: flex;
   padding: 0 10%;
-  /*justify-content: space-between;
-  align-items: center;*/
   flex-direction: column;
   background-color: #008080;
 }
 
 .logo {
-  font-size: 2rem;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: white;
+  background-color: #f63030;
+  padding: 10px 2px;
 }
 
 .nav {
@@ -23,13 +24,14 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 10px 0;
+  padding: 0 10px;
 }
 
 .nav li {
   margin-left: 1.5rem;
   font-size: 1.25rem;
+  padding: 5px 0;
 }
 
 .nav a {

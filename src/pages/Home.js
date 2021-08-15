@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { Fragment } from "react";
-import SearchResults from "../components/search/SearchResults";
+import SearchResults from "../components/Search/SearchResults";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");

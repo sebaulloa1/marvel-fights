@@ -5,17 +5,22 @@ import classes from "./Sidebar.module.css";
 const Sidebar = () => {
   return (
     <div className={classes.sidebar}>
-      <div className={classes.logo}>Great Quotes</div>
+      <div className={classes.logo}>Marvel Fights</div>
       <nav className={classes.nav}>
         <ul>
           <li>
-            <NavLink to="/quotes" activeClassName={classes.active}>
-              All Quotes
+            <NavLink to="/" activeClassName={classes.active}>
+              Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/new-quote" activeClassName={classes.active}>
-              Add a Quote
+            <NavLink to="/fight" activeClassName={classes.active}>
+              Fight
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/rankings" activeClassName={classes.active}>
+              Rankings
             </NavLink>
           </li>
         </ul>
