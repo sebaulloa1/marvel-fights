@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
 import Card from "../components/Cards/Card";
-import SearchInput from "../components/Search/SearchInput";
+import FightButton from "../components/Layout/FightButton";
+import FightsInput from "../components/Search/FightsInput";
 
 const Fight = () => {
   const fights = useSelector((state) => state.fights);
@@ -9,23 +10,24 @@ const Fight = () => {
   return (
     <Fragment>
       <div>Description</div>
-      <SearchInput />
+      <FightsInput />
       <div>
         {fights.fights.map((fight) => (
           <div>
             <Card
-              key={fight.characters[0].id}
-              name={fight.characters[0].name}
-              imgPath={fight.characters[0].imgPath}
+              key={fight.winner.id}
+              name={fight.winner.name}
+              imgPath={fight.winner.imgPath}
             />
             <Card
-              key={fight.characters[1].id}
-              name={fight.characters[1].name}
-              imgPath={fight.characters[1].imgPath}
+              key={fight.loser.id}
+              name={fight.loser.name}
+              imgPath={fight.loser.imgPath}
             />
           </div>
         ))}
       </div>
+      <FightButton />
     </Fragment>
   );
 };

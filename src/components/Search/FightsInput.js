@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { API_KEY } from "../../App";
 import { fightsActions } from "../../store/fights-slice";
@@ -7,9 +7,7 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const SearchInput = () => {
-  const [firstCharacter, setFirstCharacter] = useState({});
-  const [secondCharacter, setSecondCharacter] = useState({});
+const FightsInput = () => {
   const numberInputRef = useRef();
   const dispatch = useDispatch();
 
@@ -46,23 +44,23 @@ const SearchInput = () => {
     }
     console.log("Fetching character");
     const firstRandomCharacter = await getCharacter(firstRandomNumber);
-    setFirstCharacter({
-      id: firstRandomCharacter.id,
-      name: firstRandomCharacter.name,
-      imgPath: `${firstRandomCharacter.thumbnail.path}/portrait_medium.${firstRandomCharacter.thumbnail.extension}`,
-      comics: firstRandomCharacter.comics.items.map((comic) => comic.name),
-      events: firstRandomCharacter.events.items.map((event) => event.name),
-      series: firstRandomCharacter.series.items.map((serie) => serie.name),
-    });
+    // setFirstCharacter({
+    //   id: firstRandomCharacter.id,
+    //   name: firstRandomCharacter.name,
+    //   imgPath: `${firstRandomCharacter.thumbnail.path}/portrait_medium.${firstRandomCharacter.thumbnail.extension}`,
+    //   comics: firstRandomCharacter.comics.items.map((comic) => comic.name),
+    //   events: firstRandomCharacter.events.items.map((event) => event.name),
+    //   series: firstRandomCharacter.series.items.map((serie) => serie.name),
+    // });
     const secondRandomCharacter = await getCharacter(secondRandomNumber);
-    setSecondCharacter({
-      id: firstRandomCharacter.id,
-      name: firstRandomCharacter.name,
-      imgPath: `${firstRandomCharacter.thumbnail.path}/portrait_medium.${firstRandomCharacter.thumbnail.extension}`,
-      // comics: firstRandomCharacter.comics.items.map((comic) => comic.name),
-      // events: firstRandomCharacter.events.items.map((event) => event.name),
-      // series: firstRandomCharacter.series.items.map((serie) => serie.name),
-    });
+    // setSecondCharacter({
+    //   id: firstRandomCharacter.id,
+    //   name: firstRandomCharacter.name,
+    //   imgPath: `${firstRandomCharacter.thumbnail.path}/portrait_medium.${firstRandomCharacter.thumbnail.extension}`,
+    //   // comics: firstRandomCharacter.comics.items.map((comic) => comic.name),
+    //   // events: firstRandomCharacter.events.items.map((event) => event.name),
+    //   // series: firstRandomCharacter.series.items.map((serie) => serie.name),
+    // });
     return [
       {
         id: firstRandomCharacter.id,
@@ -86,26 +84,34 @@ const SearchInput = () => {
   const formSubmitHandler = async (event) => {
     event.preventDefault();
     console.log("Working");
+    dispatch(fightsActions.clearFights());
     const numberOfFights = numberInputRef.current.value;
     let fights = [];
     for (let i = 0; i < numberOfFights; i++) {
       let randomCharacters = await getTwoRandomCharacter();
-      let winner = null;
-      if (randomCharacters[0].id > randomCharacters[1].id) {
-        winner = randomCharacters[0].id;
-      } else {
-        winner = randomCharacters[1].id;
+      let winner = randomCharacters[0];
+      let loser = randomCharacters[1];
+      if (randomCharacters[1].id > randomCharacters[0].id) {
+        winner = randomCharacters[1];
+        loser = randomCharacters[0];
       }
       fights.push({
-        characters: [randomCharacters[0], randomCharacters[1]],
+        //characters: [randomCharacters[0], randomCharacters[1]],
         winner: winner,
+        loser: loser,
       });
     }
     console.log(fights);
+    // let winner = fights.characters[0].id;
+    // if (fights.characters[1].id > fights.characters[0].id) {
+    //   winner = fights.characters[1].id;
+    // }
+
     dispatch(
       fightsActions.addFight({
         fights: fights,
         numberOfFights: numberOfFights,
+        date: new Date().toISOString().split("T")[0],
       })
     );
   };
@@ -126,4 +132,4 @@ const SearchInput = () => {
   );
 };
 
-export default SearchInput;
+export default FightsInput;
