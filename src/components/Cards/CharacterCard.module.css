@@ -1,0 +1,48 @@
+.container {
+  height: 355px;
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  margin: 6px 0 4px;
+}
+
+.image-frame {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  height: 210px;
+}
+
+.image-frame__wrapper {
+  position: relative;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.image-frame__wrapper img {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.card-body {
+  padding: 16px 24px;
+  background: #151515;
+  height: 145px;
+  display: block;
+  position: relative;
+}
+
+.card-body p {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}

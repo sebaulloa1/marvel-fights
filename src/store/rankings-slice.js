@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { updateRankings } from "./rankings-actions";
+import { fetchTableData, updateRankings } from "./rankings-actions";
 
 const rankingsSlice = createSlice({
   name: "rankings",
@@ -9,6 +9,9 @@ const rankingsSlice = createSlice({
   reducers: {},
   extraReducers: {
     [updateRankings.fulfilled]: (state, action) => {
+      state.rankings = action.payload;
+    },
+    [fetchTableData.fulfilled]: (state, action) => {
       state.rankings = action.payload;
     },
   },

@@ -83,3 +83,14 @@ export const updateRankings = createAsyncThunk(
     return newRankings;
   }
 );
+
+export const fetchTableData = createAsyncThunk(
+  "rankings/fetchTableData",
+  async () => {
+    const response = await fetch(
+      "https://react-http-ab801-default-rtdb.firebaseio.com/rankings.json"
+    );
+    const data = await response.json();
+    return data;
+  }
+);

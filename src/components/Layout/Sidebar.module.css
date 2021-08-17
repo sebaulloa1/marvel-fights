@@ -2,17 +2,19 @@
   grid-area: sidebar;
   height: 100%;
   display: flex;
-  padding: 0 10%;
+  padding: 0;
   flex-direction: column;
-  background-color: #008080;
+  background-color: #202020;
+  width: 12%;
+  position: fixed;
 }
 
 .logo {
-  margin-top: 20px;
+  margin: 20px 10px;
   font-size: 1.5rem;
   font-weight: 700;
   color: white;
-  background-color: #f63030;
+  background-color: #e62429;
   padding: 10px 2px;
 }
 
@@ -36,11 +38,11 @@
 
 .nav a {
   text-decoration: none;
-  color: #88dfdf;
+  color: #fff;
 }
 
 .nav a:hover,
 .nav a:active,
 .nav a.active {
-  color: #e6fcfc;
+  color: #e62429;
 }

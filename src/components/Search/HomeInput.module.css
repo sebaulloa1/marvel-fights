@@ -1,0 +1,9 @@
+.container {
+  width: 400px;
+  border-radius: 2px;
+  border-bottom-color: #e62429;
+}
+
+.container form {
+  width: 100%;
+}
