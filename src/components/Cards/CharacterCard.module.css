@@ -1,9 +1,9 @@
 .container {
   height: 355px;
-  width: 10rem;
+  width: 12rem;
   display: flex;
   flex-direction: column;
-  margin: 6px 0 4px;
+  margin: 6px 10px 4px;
 }
 
 .image-frame {
@@ -30,7 +30,7 @@
 }
 
 .card-body {
-  padding: 16px 24px;
+  padding: 12px 10px 5px 10px;
   background: #151515;
   height: 145px;
   display: block;
@@ -43,6 +43,18 @@
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
+  margin: 0 0 0 5px;
+  padding: 0;
+}
+
+.footer {
+  color: #fff;
+  position: absolute;
+  bottom: 17px;
+}
+
+.footer ul {
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }

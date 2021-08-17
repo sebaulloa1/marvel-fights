@@ -1,18 +1,25 @@
 import { useState } from "react";
-import { classes } from "./HomeInput.module.css";
+import classes from "./HomeInput.module.css";
 
 const HomeInput = (props) => {
   const [searchInput, setSearchInput] = useState("");
   const [searchType, setSearchType] = useState("characters");
   const [firstOptionChecked, setFirstOptionChecked] = useState(true);
+  //let firstOptionChecked = true;
 
   const inputChangeHandler = (event) => {
     setSearchInput(event.target.value);
   };
 
   const radioInputChangeHandler = (event) => {
-    setSearchType(event.target.value);
+    // if (searchType === "characters") {
+    //   setFirstOptionChecked(true);
+    // } else {
     setFirstOptionChecked(false);
+    // }
+    // firstOptionChecked = false;
+    setSearchType(event.target.value);
+    console.log(event.target.value);
   };
 
   const submitHandler = (event) => {
@@ -21,49 +28,54 @@ const HomeInput = (props) => {
   };
 
   return (
-    <div className={classes.container}>
+    <div className={classes["form-container"]}>
       <form onSubmit={submitHandler}>
-        <label htmlFor="search">Search</label>
+        {/* <label htmlFor="search">Search</label> */}
         <input
           name="search"
           type="text"
           onChange={inputChangeHandler}
           value={searchInput}
+          placeholder="Type here"
         />
-        <input
-          type="radio"
-          id="characters"
-          name="option"
-          value="characters"
-          onChange={radioInputChangeHandler}
-          checked={firstOptionChecked}
-        />
-        <label htmlFor="characters">characters</label>
-        <input
-          type="radio"
-          id="comics"
-          name="option"
-          value="comics"
-          onChange={radioInputChangeHandler}
-        />
-        <label htmlFor="comics">comics</label>
-        <input
-          type="radio"
-          id="series"
-          name="option"
-          value="series"
-          onChange={radioInputChangeHandler}
-        />
-        <label htmlFor="series">Series</label>
-        <input
-          type="radio"
-          id="events"
-          name="option"
-          value="events"
-          onChange={radioInputChangeHandler}
-        />
-        <label htmlFor="events">Events</label>
-        <button type="submit">Search</button>
+        <div className={classes.actions}>
+          <div className={classes["radio-toolbar"]}>
+            <input
+              type="radio"
+              id="characters"
+              name="option"
+              value="characters"
+              onChange={radioInputChangeHandler}
+              className={firstOptionChecked ? classes["first-check"] : ""}
+            />
+            <label htmlFor="characters">characters</label>
+            <input
+              type="radio"
+              id="comics"
+              name="option"
+              value="comics"
+              onChange={radioInputChangeHandler}
+            />
+            <label htmlFor="comics">comics</label>
+            <input
+              type="radio"
+              id="series"
+              name="option"
+              value="series"
+              onChange={radioInputChangeHandler}
+            />
+            <label htmlFor="series">series</label>
+            <input
+              type="radio"
+              id="events"
+              name="option"
+              value="events"
+              onChange={radioInputChangeHandler}
+            />
+            <label htmlFor="events">events</label>
+          </div>
+          <button type="submit">Search</button>
+        </div>
       </form>
     </div>
   );

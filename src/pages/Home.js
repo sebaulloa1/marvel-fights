@@ -5,42 +5,20 @@ import { Fragment } from "react";
 import { API_KEY } from "../App";
 import CharacterCard from "../components/Cards/CharacterCard";
 import HomeFlexWrapper from "../components/Layout/HomeFlexWrapper";
+import CharacterModal from "../components/Search/CharacterModal";
 import HomeInput from "../components/Search/HomeInput";
 import SearchResults from "../components/Search/SearchResults";
+import Banner from "../components/UI/Banner";
 
 const Home = () => {
-  // const [searchInput, setSearchInput] = useState("");
-  // const [searchType, setSearchType] = useState("characters");
-  // const [firstOptionChecked, setFirstOptionChecked] = useState(true);
   const [hasSearched, setHasSearched] = useState(false);
   const [results, setResults] = useState([]);
-  // // const isMounted = useRef(false);
-
-  // //   useEffect(() => {
-  // //     if (!isMounted.current) {
-  // //       isMounted.current = true;
-  // //     } else {
-  // //       const timer = setTimeout(() => {
-  // //         fetchAutocompleteData(searchInput);
-  // //         console.log("Timer" + searchInput);
-  // //       }, 1000);
-  // //       return () => {
-  // //         clearTimeout(timer);
-  // //         console.log("Cleanup");
-  // //       };
-  // //     }
-  // //   }, [searchInput]);
-
-  // const searchInputChangeHandler = (event) => {
-  //   setSearchInput(event.target.value);
-  // };
-
-  // const radioInputChangeHandler = (event) => {
-  //   console.log("Clicked");
-  //   console.log(event);
-  //   setSearchType(event.target.value);
-  //   setFirstOptionChecked(false);
-  // };
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState({
+    path: "",
+    name: "",
+    type: "",
+  });
 
   const submitHandler = (searchInput, searchType) => {
     const params = new URLSearchParams();
@@ -62,17 +40,35 @@ const Home = () => {
     fetchData();
   };
 
+  const showModalHandler = (path, name, type) => {
+    setShowModal(true);
+    setModalData({
+      path,
+      name,
+      type,
+    });
+  };
+
+  const closeModalHandler = () => {
+    setShowModal(false);
+  };
+
   return (
     <Fragment>
-      <div>
-        <div>MARVEL FIGHTS</div>
-      </div>
+      <Banner />
       <HomeInput onSubmit={submitHandler} />
       <HomeFlexWrapper>
         {hasSearched &&
           results.map((result) => (
-            <CharacterCard key={result.id} data={result} />
+            <CharacterCard
+              onShowModal={showModalHandler}
+              key={result.id}
+              data={result}
+            />
           ))}
+        {hasSearched && showModal && (
+          <CharacterModal data={modalData} onClose={closeModalHandler} />
+        )}
       </HomeFlexWrapper>
       {/* {hasSearched && <SearchResults results={results} />} */}
     </Fragment>

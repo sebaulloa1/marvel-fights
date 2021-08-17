@@ -1,0 +1,15 @@
+.container {
+  height: 120px;
+  width: 350px;
+  background-color: #e62429;
+  color: #fff;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.container h1 {
+  display: block;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+}
