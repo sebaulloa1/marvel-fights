@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/marvel-fights/static/css/main.dfed24c4.chunk.css",
-    "main.js": "/marvel-fights/static/js/main.ab426b9c.chunk.js",
-    "main.js.map": "/marvel-fights/static/js/main.ab426b9c.chunk.js.map",
+    "main.js": "/marvel-fights/static/js/main.2961a474.chunk.js",
+    "main.js.map": "/marvel-fights/static/js/main.2961a474.chunk.js.map",
     "runtime-main.js": "/marvel-fights/static/js/runtime-main.583c0980.js",
     "runtime-main.js.map": "/marvel-fights/static/js/runtime-main.583c0980.js.map",
-    "static/js/2.125a162f.chunk.js": "/marvel-fights/static/js/2.125a162f.chunk.js",
-    "static/js/2.125a162f.chunk.js.map": "/marvel-fights/static/js/2.125a162f.chunk.js.map",
+    "static/js/2.8e119c9a.chunk.js": "/marvel-fights/static/js/2.8e119c9a.chunk.js",
+    "static/js/2.8e119c9a.chunk.js.map": "/marvel-fights/static/js/2.8e119c9a.chunk.js.map",
     "index.html": "/marvel-fights/index.html",
     "static/css/main.dfed24c4.chunk.css.map": "/marvel-fights/static/css/main.dfed24c4.chunk.css.map",
-    "static/js/2.125a162f.chunk.js.LICENSE.txt": "/marvel-fights/static/js/2.125a162f.chunk.js.LICENSE.txt"
+    "static/js/2.8e119c9a.chunk.js.LICENSE.txt": "/marvel-fights/static/js/2.8e119c9a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.583c0980.js",
-    "static/js/2.125a162f.chunk.js",
+    "static/js/2.8e119c9a.chunk.js",
     "static/css/main.dfed24c4.chunk.css",
-    "static/js/main.ab426b9c.chunk.js"
+    "static/js/main.2961a474.chunk.js"
   ]
 }
