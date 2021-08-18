@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/marvel-fights/static/css/main.dfed24c4.chunk.css",
-    "main.js": "/marvel-fights/static/js/main.d3decc67.chunk.js",
-    "main.js.map": "/marvel-fights/static/js/main.d3decc67.chunk.js.map",
+    "main.js": "/marvel-fights/static/js/main.a92cc92b.chunk.js",
+    "main.js.map": "/marvel-fights/static/js/main.a92cc92b.chunk.js.map",
     "runtime-main.js": "/marvel-fights/static/js/runtime-main.583c0980.js",
     "runtime-main.js.map": "/marvel-fights/static/js/runtime-main.583c0980.js.map",
     "static/js/2.8e119c9a.chunk.js": "/marvel-fights/static/js/2.8e119c9a.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.583c0980.js",
     "static/js/2.8e119c9a.chunk.js",
     "static/css/main.dfed24c4.chunk.css",
-    "static/js/main.d3decc67.chunk.js"
+    "static/js/main.a92cc92b.chunk.js"
   ]
 }
