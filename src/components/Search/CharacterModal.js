@@ -11,6 +11,7 @@ const CharacterModal = (props) => {
     const fetchData = async () => {
       const params = new URLSearchParams();
       params.append("apikey", API_KEY);
+      //params.append("orderBy", "issueNumber");
       const response = await fetch(props.data.path + "?" + params);
       if (!response.ok) {
         throw new Error();
@@ -33,7 +34,13 @@ const CharacterModal = (props) => {
         <div className={classes.body}>
           {modalData &&
             modalData.data.results.map((result) => {
-              return <ModalItem data={result} />;
+              return (
+                <ModalItem
+                  key={result.id}
+                  data={result}
+                  type={props.data.type}
+                />
+              );
             })}
         </div>
       </div>

@@ -58,3 +58,12 @@
   padding: 0;
   list-style-type: none;
 }
+
+.footer li {
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.footer li:hover {
+  color: #e62429;
+}

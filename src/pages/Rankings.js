@@ -1,10 +1,15 @@
+import { Fragment } from "react";
 import RankingsTable from "../components/Rankings/RankingsTable";
+import Banner from "../components/UI/Banner";
 
 const Rankings = () => {
   return (
-    <div>
-      <RankingsTable />
-    </div>
+    <Fragment>
+      <Banner />
+      <div>
+        <RankingsTable />
+      </div>
+    </Fragment>
   );
 };
 

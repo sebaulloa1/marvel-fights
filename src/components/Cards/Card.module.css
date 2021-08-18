@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #202020;
+  color: #202020;
+  margin-bottom: 10px;
+  width: 150px;
+}
+
+.name {
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  border-radius: 15px;
+  background-color: #e62429;
+  font-weight: 700;
+  vertical-align: middle;
+  align-items: center;
+  height: 75px;
+}
+
+.name p {
+  text-align: center;
+}
+
+.image {
+  height: 225px;
+}
+
+.image img {
+  display: block;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+
+.winner {
+  animation-name: win;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes win {
+  from {
+    brackground-color: #e62429;
+  }
+  to {
+    background-color: green;
+  }
+}

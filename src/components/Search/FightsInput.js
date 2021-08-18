@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { API_KEY } from "../../App";
 import { fightsActions } from "../../store/fights-slice";
+import classes from "./FightsInput.module.css";
 
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -65,7 +66,7 @@ const FightsInput = () => {
       {
         id: firstRandomCharacter.id,
         name: firstRandomCharacter.name,
-        imgPath: `${firstRandomCharacter.thumbnail.path}/portrait_medium.${firstRandomCharacter.thumbnail.extension}`,
+        imgPath: `${firstRandomCharacter.thumbnail.path}/portrait_xlarge.${firstRandomCharacter.thumbnail.extension}`,
         //   comics: secondRandomCharacter.comics.items.map((comic) => comic.name),
         //   events: secondRandomCharacter.events.items.map((event) => event.name),
         //   series: secondRandomCharacter.series.items.map((serie) => serie.name),
@@ -73,7 +74,7 @@ const FightsInput = () => {
       {
         id: secondRandomCharacter.id,
         name: secondRandomCharacter.name,
-        imgPath: `${secondRandomCharacter.thumbnail.path}/portrait_medium.${secondRandomCharacter.thumbnail.extension}`,
+        imgPath: `${secondRandomCharacter.thumbnail.path}/portrait_xlarge.${secondRandomCharacter.thumbnail.extension}`,
         // comics: secondRandomCharacter.comics.items.map((comic) => comic.name),
         // events: secondRandomCharacter.events.items.map((event) => event.name),
         // series: secondRandomCharacter.series.items.map((serie) => serie.name),
@@ -101,6 +102,7 @@ const FightsInput = () => {
         loser: loser,
       });
     }
+
     console.log(fights);
     // let winner = fights.characters[0].id;
     // if (fights.characters[1].id > fights.characters[0].id) {
@@ -117,10 +119,11 @@ const FightsInput = () => {
   };
 
   return (
-    <div>
+    <div className={classes.container}>
       <form onSubmit={formSubmitHandler}>
-        <label htmlFor="numberOfFights">Number of Fights</label>
+        <label htmlFor="numberOfFights">Number of Fights:</label>
         <input
+          className={classes.input}
           ref={numberInputRef}
           name="numberOfFights"
           min="1"

@@ -5,8 +5,17 @@ const rankingsSlice = createSlice({
   name: "rankings",
   initialState: {
     rankings: [],
+    hasChanged: false,
   },
-  reducers: {},
+  reducers: {
+    updateFlag(state) {
+      state.hasChanged = true;
+    },
+    clearRankings(state) {
+      state.rankings = [];
+      state.hasChanged = false;
+    },
+  },
   extraReducers: {
     [updateRankings.fulfilled]: (state, action) => {
       state.rankings = action.payload;
@@ -16,5 +25,7 @@ const rankingsSlice = createSlice({
     },
   },
 });
+
+export const rankingsActions = rankingsSlice.actions;
 
 export default rankingsSlice;

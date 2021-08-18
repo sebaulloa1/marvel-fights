@@ -25,8 +25,12 @@ const CharacterCard = (props) => {
             <li onClick={onClickHandler.bind(null, "comics")}>
               Comics: {data.comics.available}
             </li>
-            <li>Events: {data.events.available}</li>
-            <li>Series: {data.series.available}</li>
+            <li onClick={onClickHandler.bind(null, "events")}>
+              Events: {data.events.available}
+            </li>
+            <li onClick={onClickHandler.bind(null, "series")}>
+              Series: {data.series.available}
+            </li>
           </ul>
         </div>
       </div>

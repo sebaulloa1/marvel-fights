@@ -18,6 +18,7 @@ const Home = () => {
     path: "",
     name: "",
     type: "",
+    id: "",
   });
 
   const submitHandler = (searchInput, searchType) => {
@@ -61,8 +62,8 @@ const Home = () => {
         {hasSearched &&
           results.map((result) => (
             <CharacterCard
-              onShowModal={showModalHandler}
               key={result.id}
+              onShowModal={showModalHandler}
               data={result}
             />
           ))}

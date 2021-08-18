@@ -14,7 +14,7 @@
 }
 
 .header {
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 
 .header p {
@@ -28,12 +28,17 @@
   flex-direction: row;
 }
 
-.info p {
-  margin: 0;
+.info p,
+.info a {
+  margin: 0 0 2px 0;
   padding-right: 10px;
   color: gray;
+  font-size: 14px;
 }
 
 .description {
   font-size: 14px;
+  max-height: 85px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

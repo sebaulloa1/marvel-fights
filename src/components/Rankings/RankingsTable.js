@@ -55,7 +55,14 @@ const RankingsTable = () => {
           {headerGroups.map((group) => (
             <tr {...group.getHeaderGroupProps()}>
               {group.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                <th
+                  {...column.getHeaderProps(
+                    {
+                      style: { width: "200px" },
+                    },
+                    column.getSortByToggleProps()
+                  )}
+                >
                   {column.render("Header")}
                   <span>
                     {column.isSorted
@@ -84,7 +91,7 @@ const RankingsTable = () => {
           })}
         </tbody>
       </table>
-      <div>
+      <div className={classes.actions}>
         <span>
           Page {pageIndex + 1} of {pageOptions.length}
         </span>

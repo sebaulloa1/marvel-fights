@@ -55,6 +55,7 @@ const HomeInput = (props) => {
               name="option"
               value="comics"
               onChange={radioInputChangeHandler}
+              disabled
             />
             <label htmlFor="comics">comics</label>
             <input
@@ -63,6 +64,7 @@ const HomeInput = (props) => {
               name="option"
               value="series"
               onChange={radioInputChangeHandler}
+              disabled
             />
             <label htmlFor="series">series</label>
             <input
@@ -71,6 +73,7 @@ const HomeInput = (props) => {
               name="option"
               value="events"
               onChange={radioInputChangeHandler}
+              disabled
             />
             <label htmlFor="events">events</label>
           </div>

@@ -1,11 +1,18 @@
+import { useSelector } from "react-redux";
+import classes from "./Card.module.css";
+
 const Card = (props) => {
+  const rankings = useSelector((state) => state.rankings);
+  const hasWon = rankings.hasChanged && props.winner;
   return (
-    <div className="card">
-      <div className="card__image">
-        <img src={props.imgPath} alt="" />
-      </div>
-      <div className="card__body">
+    <div className={classes.card}>
+      <div
+        className={hasWon ? `${classes.name} ${classes.winner}` : classes.name}
+      >
         <p>{props.name}</p>
+      </div>
+      <div className={classes.image}>
+        <img src={props.imgPath} alt="" />
       </div>
     </div>
   );
