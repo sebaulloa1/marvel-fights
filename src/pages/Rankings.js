@@ -6,9 +6,8 @@ const Rankings = () => {
   return (
     <Fragment>
       <Banner />
-      <div>
-        <RankingsTable />
-      </div>
+
+      <RankingsTable />
     </Fragment>
   );
 };

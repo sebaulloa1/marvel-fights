@@ -48,21 +48,14 @@ const RankingsTable = () => {
   };
 
   return (
-    <Fragment>
+    <div className={classes.container}>
       <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table {...getTableProps()} className={classes.table}>
         <thead>
           {headerGroups.map((group) => (
             <tr {...group.getHeaderGroupProps()}>
               {group.headers.map((column) => (
-                <th
-                  {...column.getHeaderProps(
-                    {
-                      style: { width: "200px" },
-                    },
-                    column.getSortByToggleProps()
-                  )}
-                >
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
                   <span>
                     {column.isSorted
@@ -106,7 +99,7 @@ const RankingsTable = () => {
           Next
         </button>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
