@@ -6,7 +6,7 @@ const CharacterCard = (props) => {
 
   const onClickHandler = (type) => {
     console.log(type);
-    const path = `http://gateway.marvel.com/v1/public/characters/${data.id}/${type}`;
+    const path = `https://gateway.marvel.com/v1/public/characters/${data.id}/${type}`;
     console.log(path);
     props.onShowModal(path, data.name, type);
   };

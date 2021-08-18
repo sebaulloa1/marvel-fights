@@ -31,7 +31,7 @@ const Home = () => {
     }
     const fetchData = async () => {
       const response = await fetch(
-        `http://gateway.marvel.com/v1/public/${searchType}?` + params
+        `https://gateway.marvel.com/v1/public/${searchType}?` + params
       );
       const data = await response.json();
       console.log(data);

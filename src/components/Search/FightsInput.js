@@ -14,7 +14,7 @@ const FightsInput = () => {
 
   const getTotalCharacters = async () => {
     const response = await fetch(
-      `http://gateway.marvel.com/v1/public/characters?apikey=${API_KEY}`
+      `https://gateway.marvel.com/v1/public/characters?apikey=${API_KEY}`
     );
     const data = await response.json();
     return parseInt(data.data.total);
@@ -27,7 +27,7 @@ const FightsInput = () => {
       offset: number,
     });
     const response = await fetch(
-      `http://gateway.marvel.com/v1/public/characters?` + params
+      `https://gateway.marvel.com/v1/public/characters?` + params
     );
     const data = await response.json();
     return data.data.results[0];
