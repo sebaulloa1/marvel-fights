@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { useSelector } from "react-redux";
+import { Fragment, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "../components/Cards/Card";
 import FightButton from "../components/UI/FightButton";
 import HomeFlexWrapper from "../components/Layout/HomeFlexWrapper";
@@ -7,9 +7,14 @@ import FightsInput from "../components/Search/FightsInput";
 import Banner from "../components/UI/Banner";
 import FightHolder from "../components/UI/FighHolder";
 import Versus from "../components/UI/Versus";
+import { rankingsActions } from "../store/rankings-slice";
 
 const Fight = () => {
   const fights = useSelector((state) => state.fights);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(rankingsActions.clearRankings());
+  });
   console.log(fights);
   return (
     <Fragment>
